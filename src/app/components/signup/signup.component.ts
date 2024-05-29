@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,11 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './signup.component.css',
 })
 export class SignupComponent {
+  constructor(private router: Router) {}
+
   register(regForm: NgForm) {
+    this.router.navigate(['/login']);
+
     console.log(regForm.value);
   }
   reset(regForm: NgForm) {
